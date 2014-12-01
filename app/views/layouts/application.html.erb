@@ -7,8 +7,22 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div class="navbar navbar-default navbar-static-top">
+    <div class="container">
+      <div class="navbar-header">
+        <%= link_to 'Mini-chat', root_path, class: 'navbar-brand' %>
+      </div>
+    </div>
+  </div>
 
-<%= yield %>
+  <div class="container">
+    <% flash.each do |key, value| %>
+      <div class="alert alert-<%= key %>">
+        <%= value %>
+      </div>
+    <% end %>
 
+    <%= yield %>
+  </div>
 </body>
 </html>
