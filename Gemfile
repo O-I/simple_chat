@@ -8,6 +8,7 @@ gem 'uglifier',     '>= 1.3.0'    # Use Uglifier as compressor for JS
 gem 'coffee-rails', '~> 4.0.0'    # Use CoffeeScript
 gem 'jquery-rails'                # Use jquery as the JS library
 gem 'turbolinks'                  # Use Turbolinks
+gem 'bootstrap-sass'
 gem 'omniauth-facebook'
 gem 'omniauth-twitter'
 
