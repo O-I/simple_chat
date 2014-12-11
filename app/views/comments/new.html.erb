@@ -1,8 +1,9 @@
-<div class="jumbotron">
-  <h1>Welcome to simple chat!</h1>
-  <p class="lead">
-    Sign in with Twitter or Facebook to start chatting
-  </p>
-  <%= link_to '', '/auth/twitter',  class: 'social twitter'  %>
-  <%= link_to '', '/auth/facebook', class: 'social facebook' %>
-</div>
+<% if current_user %>
+  <div class="page-header">
+    <h1>Join the discussion</h1>
+  </div>
+
+  <% render 'form' %>
+<% else %>
+  <% render 'welcome' %>
+<% end %>
