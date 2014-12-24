@@ -1,2 +1,2 @@
-$('#comments').find('.media-list').html('<%= j render @comments %>');
-window.Poll();
+$('#comments').find('.media-list').prepend('<%= j render @comments %>');
+Poller.poll();
