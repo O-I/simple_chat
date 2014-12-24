@@ -1,5 +1,9 @@
 class CommentsController < ApplicationController
 
+  def index
+    @comments = Comment.order('created_at DESC')
+  end
+
   def new
     @comment = Comment.new
     @comments = Comment.order('created_at DESC')
