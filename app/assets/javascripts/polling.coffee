@@ -14,3 +14,4 @@ window.Poller = {
 
 jQuery ->
   Poller.poll() if $('#comments').size() > 0
+  return

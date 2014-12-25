@@ -23,6 +23,6 @@ window.Poller = {
 
 jQuery(function() {
   if ($('#comments').size() > 0) {
-    return Poller.poll();
+    Poller.poll();
   }
 });
