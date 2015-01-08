@@ -1,7 +1,3 @@
-Poller.clear();
-Poller.poll(0);
-<% if @comment.new_record? %>
-  alert('Your comment could not be saved');
-<% else %>
-  $('#comment_body').val('');
-<% end %>
+publisher = client.publish('/comments', {
+  message: '<%= j render @comment %>'
+});
