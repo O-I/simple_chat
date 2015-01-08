@@ -18,7 +18,8 @@ module SimpleChat
     config.middleware.delete Rack::Lock
     config.middleware.use FayeRails::Middleware,
     mount: '/faye', timeout: 25, server: 'passenger',
-    engine: { type: Faye::Redis, host: 'localhost' }
+    engine: { type: Faye::Redis,
+              host: 'rails-simple-chat-demo.herokuapp.com' }
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
