@@ -13,6 +13,7 @@ gem 'bootstrap-sass'
 gem 'omniauth-facebook'
 gem 'omniauth-twitter'
 gem 'faye-rails',       '~> 2.0'
+gem 'faye-redis'
 
 group :development, :test do
   gem 'thin'
