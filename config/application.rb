@@ -17,7 +17,7 @@ module SimpleChat
   class Application < Rails::Application
     config.middleware.delete Rack::Lock
     config.middleware.use FayeRails::Middleware,
-    mount: '/faye', timeout: 25, server: 'passenger',
+    mount: '/faye', timeout: 90, server: 'passenger',
     engine: { type: Faye::Redis,
               host: 'rails-simple-chat-demo.herokuapp.com' }
     # Settings in config/environments/* take precedence over those specified here.
