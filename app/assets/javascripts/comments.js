@@ -8,3 +8,7 @@ jQuery(function() {
     }
   });
 });
+
+$('#new_comment').submit(function() {
+  return $(this).find("input[type='submit']").val('Sending...').prop('disabled', true);
+});
