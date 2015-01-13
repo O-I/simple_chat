@@ -16,4 +16,3 @@
 //= require turbolinks
 //= require faye
 //= require comments
-//= require_tree .
