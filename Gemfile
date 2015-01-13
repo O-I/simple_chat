@@ -3,6 +3,7 @@ ruby '2.1.5'
 
 gem 'rails',               '4.1.8'
 gem 'pg'                              # Use postgresql as the database
+gem 'thin'                            # Use thin as the web server
 gem 'sass-rails',       '~> 4.0.3'    # Use SCSS for stylesheets
 gem 'uglifier',         '>= 1.3.0'    # Use Uglifier as compressor for JS
 gem 'coffee-rails',     '~> 4.0.0'    # Use CoffeeScript
@@ -16,7 +17,6 @@ gem 'faye-rails',       '~> 2.0'
 gem 'faye-redis'
 
 group :development, :test do
-  gem 'thin'
   gem 'spring'
   gem 'pry-rails'
   gem 'pry-byebug'
@@ -26,5 +26,4 @@ end
 
 group :production do
   gem 'rails_12factor'
-  gem 'passenger'
 end
