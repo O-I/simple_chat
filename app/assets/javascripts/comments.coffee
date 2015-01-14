@@ -7,9 +7,14 @@ client.addExtension {
     callback(message)
 }
 
-client.subscribe '/comments', (payload) ->
-  $('#comments').find('.media-list').prepend(payload.message) if payload.message
-
 jQuery ->
   $('#new_comment').submit ->
     $(this).find("input[type='submit']").val('Sending...').prop('disabled', true)
+
+  try
+    client.unsubscribe '/comments'
+  catch
+    console.log "Can't unsubscribe."
+
+  client.subscribe '/comments', (payload) ->
+    $('#comments').find('.media-list').prepend(payload.message) if payload.message
