@@ -13,7 +13,6 @@ gem 'jquery-turbolinks'
 gem 'bootstrap-sass'
 gem 'omniauth-facebook'
 gem 'omniauth-twitter'
-gem 'faye-rails',       '~> 2.0'
 
 group :development, :test do
   gem 'spring'
