@@ -8,7 +8,7 @@
       <%= link_to comment.user.name,
           comment.user.profile_url, target: '_blank' %> says
       <small class="text-muted">
-        [at <%= comment.created_at.strftime('%-d %B %Y, %H:%M:%S') %>]
+        [at <%= comment.created_at.timestamp %>]
       </small>
     </h4>
     <p><%= comment.body %></p>
