@@ -1,8 +1,19 @@
 class CommentsController < ApplicationController
+  include ActionController::Live
 
   def index
-    @comments = Comment.where('id > ?', params[:after_id].to_i)
-                       .order('created_at DESC')
+    response.headers['Content-Type'] = 'text/event-stream'
+    sse = SSE.new(response.stream)
+    begin
+      Comment.on_change do |data|
+        sse.write(data)
+      end
+    rescue IOError
+      # Client Disconnected
+    ensure
+      sse.close
+    end
+    render nothing: true
   end
 
   def new
