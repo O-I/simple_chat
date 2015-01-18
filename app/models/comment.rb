@@ -21,6 +21,12 @@ class Comment < ActiveRecord::Base
         Comment.connection.execute 'UNLISTEN comments'
       end
     end
+
+    def basic_info_json
+      JSON.generate({ user_name: user.name, user_avatar: user.avatar_url,
+                      user_profile: user.profile_url, body: body,
+                      timestamp: timestamp })
+    end
   end
 
   def timestamp
@@ -30,6 +36,6 @@ class Comment < ActiveRecord::Base
   private
 
   def notify_comment_added
-    Comment.connection.execute "NOTIFY comments, 'data'"
+    Comment.connection.execute "NOTIFY comments, '#{self.basic_info_json}'"
   end
 end
